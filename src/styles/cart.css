@@ -2,7 +2,20 @@
   margin: 0;
   padding: 0;
 }
-
+@media(min-width:1355px){
+  article {
+    width: 60%;
+    margin: auto;
+    height: 1000px;
+  }
+}
+@media(max-width:780px){
+  article {
+    width: 60%;
+    margin: auto;
+    height: 500px;
+  }
+}
 article {
   width: 60%;
   margin: auto;
