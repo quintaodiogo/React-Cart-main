@@ -3,13 +3,12 @@ import "../../styles/navbar.css";
 const User = ({ setShow, size }) => {
   return (
     <div className="user-container">
-      <a className="userIcon cadastro desktop" href="">
+      <a className="userIcon cadastro" href="">
         Cadastro
       </a>
-      <a className="userIcon login desktop" href="">
+      <a className="userIcon login" href="">
         Entrar
       </a>
-      <a className="note">Menu</a>
     </div>
   );
 };

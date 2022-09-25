@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-const Menu = () => {
+import Bottom_header from "../Header/bottom-header";
+import "../Menu/navbar_mobile.css";
+const Menu = ({ setShow, size }) => {
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
   const [menu_class, setMenuClass] = useState("menu hidden");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -14,14 +16,23 @@ const Menu = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
+
   return (
     <div>
       <nav>
-        <div className="burger-menu" onClick={updateMenu}>
-          <a href="">Menu</a>
+        <div className="nav_box">
+        <span className="my_shop" onClick={() => setShow(true)}>
+            GoDevShop
+          </span>
+          <div className="burger-menu" onClick={updateMenu}>
+            <div className={burger_class}></div>
+            <div className={burger_class}></div>
+            <div className={burger_class}></div>
+          </div>
         </div>
-      </nav> 
-      <div className={menu_class}>
+      </nav>
+      <div
+        className={menu_class}>
         <ul className="listItems">
           <li className="list">
             <a href="">Roupas</a>
@@ -39,18 +50,8 @@ const Menu = () => {
             <a href="">Cadastrar</a>
           </li>
         </ul>
-        <div className="search-container">
-          <a className="search-btn desktop" href="#">
-            <i className="fas fa-search search"></i>
-          </a>
-          <input
-            type="text"
-            className="input desktop"
-            name="searchBox"
-            placeholder="Pesquisar Produtos"
-          />
-        </div>
       </div>
+      <Bottom_header />
     </div>
   );
 };

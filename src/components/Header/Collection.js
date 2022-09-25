@@ -2,10 +2,10 @@ import React from 'react'
 const Collection = () => {
     return (
         <div className='Collection-container'>
-            <div className="clothing desktop">
+            <div className="clothing">
                 <a>Roupas</a>
             </div>
-            <div className="accessories desktop">
+            <div className="accessories">  
                 <a>Acessórios</a>
             </div>
         </div>

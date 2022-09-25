@@ -4,11 +4,12 @@ import Amazon from "./components/amazon";
 import Slidershow from './components/Slidershow/slidershow'
 import Navbar from "./components/navbar";
 import Cart from "./components/cart";
+import Menu from "./components/Menu/hamburguermenu";
 
 const App = () => {
+  const [menuIsVisible, setMenuIsVisible] = useState(false)
   const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
-
   const handleClick = (item) => {
     if (cart.indexOf(item) !== -1) return;
     setCart([...cart, item]);
@@ -29,11 +30,14 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <Navbar setShow={setShow} size={cart.length} />
       {show ? (
+        <Navbar handleClick={handleClick} setShow={setShow} size={cart.length} /> 
+      ) : (
+        <Menu setShow={setShow} size={cart.length} handleChange={handleChange} />)}
+     {show ? (
         <Slidershow handleClick={handleClick} />
       ) : (
-        <a/>
+        <a />
       )}
       {show ? (
         <Amazon handleClick={handleClick} />
@@ -44,5 +48,5 @@ const App = () => {
     </React.Fragment>
   );
 };
-
+//Tem que mudar o header quando tiver 1310px width
 export default App;

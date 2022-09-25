@@ -12,7 +12,25 @@ a {
   text-decoration: none;
 }
 
-nav {
+.desktop {
+  display: none;
+}
+
+.note {
+  display: inherit;
+}
+
+@media(min-width:1300px) {
+  .desktop {
+    display: inherit;
+  }
+
+  .note {
+    display: none;
+  }
+}
+
+.nav_box {
   width: 100%;
   height: 5em;
   background-color: skyblue;
@@ -23,12 +41,12 @@ nav {
   align-items: center;
 }
 
-h3 {
+span.my_shop {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
   font-family: cursive;
-  cursor: pointer;  
+  cursor: pointer;
   align-items: center;
   text-align: center;
 }
@@ -51,16 +69,15 @@ h3 {
 }
 
 .menu {
-  width: 50%;
-  height: 100vh;
-  background-color: gray;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  float: right;
-  text-align: center;
-  position: relative;
-
+  display: flex;
+  position: fixed;
+  transition: right .6s ease;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  padding-top: 80px;
+  opacity: 80%;
+  z-index: 4;
 }
 
 .hidden {
@@ -74,16 +91,20 @@ h3 {
 .burger-bar.clicked:nth-child(1) {
   transform: rotate(45deg) translate(0.75em, 1.25em);
   transition: ease-in-out 0.5s;
+  z-index: 10;
 }
 
 .burger-bar.clicked:nth-child(2) {
   transform: scale(0);
   transition: ease-in-out 0.5s;
+  z-index: 10;
+
 }
 
 .burger-bar.clicked:nth-child(3) {
   transform: rotate(135deg) translate(-0.5em, 1em);
   transition: ease-in-out 0.5s;
+  z-index: 10;
 }
 
 .burger-bar.unclicked {
@@ -94,12 +115,11 @@ h3 {
 .listItems {
   display: flex;
   width: 100%;
+  justify-content: center;
   align-items: center;
   color: white;
   z-index: 10;
   flex-direction: column;
-  padding-top: 20px;
-  font-size: 26px;
 }
 
 .listItems .list {
@@ -110,32 +130,56 @@ h3 {
   color: aliceblue;
   font-weight: 200;
   cursor: pointer;
+  font-size: 40px;
 }
-
-.search-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 60%;
-  height: 30px;
-  background-color: white;
-  margin-top: 20px;
-  margin-left: 150px;
+.listItems .list a:hover {
+  color: #000;
+  background-color:aliceblue;
   border-radius: 15px;
+  font-weight: 1000;
+  cursor: pointer;
+  font-size: 40px;
 }
 
-.search-container a {
-  color: gray;
-  padding: 2px;
-  margin: 10px;
-  border-radius: 5px;
+
+@media(max-width:1100px) {
+  .menu {
+    width: 1025px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .visible {
+    display: inherit;
+  }
 }
 
-.search-container input {
-  width: 90%;
-  font-size: 15px;
-  border-radius: 5px;
-  border: none;
-  padding: 1px;
+@media(max-width:1030px) {
+  .menu {
+    width: 410px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .visible {
+    display: inherit;
+  }
+}
+
+@media(max-width:400px) {
+  .menu {
+    width: 320px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .visible {
+    display: inherit;
+  }
 }

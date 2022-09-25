@@ -28,5 +28,4 @@ const Navbar = ({ setShow, size }) => {
     </header>
   );
 };
-
 export default Navbar;
