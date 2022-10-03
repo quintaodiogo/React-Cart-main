@@ -30,10 +30,8 @@ const App = () => {
 
   return (
     <React.Fragment>
-      {show ? (
         <Navbar handleClick={handleClick} setShow={setShow} size={cart.length} /> 
-      ) : (
-        <Menu setShow={setShow} size={cart.length} handleChange={handleChange} />)}
+        <Menu setShow={setShow} size={cart.length} handleChange={handleChange} />
      {show ? (
         <Slidershow handleClick={handleClick} />
       ) : (

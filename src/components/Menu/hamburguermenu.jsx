@@ -18,7 +18,7 @@ const Menu = ({ setShow, size }) => {
 
 
   return (
-    <div>
+    <div className="note">
       <nav>
         <div className="nav_box">
         <span className="my_shop" onClick={() => setShow(true)}>

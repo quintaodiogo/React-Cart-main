@@ -7,8 +7,8 @@ import "../styles/navbar.css";
 
 const Navbar = ({ setShow, size }) => {
   return (
-    <header>
-      <nav>
+    <header className="desktop">
+      <nav className="desktop">
         <div className="nav_box">
           <span className="my_shop" onClick={() => setShow(true)}>
             GoDevShop
